@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>King's Store</title>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <!-- <a href="Welcome page.html"> <img src="pictures/king.png" width="80px"></a> -->
+          <a href="/"> <img src="{{url_for('static', filename= 'pictures/king.png')}}" width="80px"></a>
+
+        </div>
+        <!-- Nav represents a section of page which is linked with another pages or parts.  -->
+        <nav>
+          <!-- ul means unordered list  -->
+          <ul id="MenuItems">
+            <!-- li is used to represent an items in a list -->
+            <li> <a href="/">Home</a></li>
+            <li> <a href="product">Products</a></li>
+            <li> <a href="">Contact</a></li>
+            <li> <a href="account">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart"><img src="{{url_for('static', filename= 'pictures/cart.jpg')}}" width="40px" height="50px"></a>
+        <img src="{{url_for('static', filename= 'pictures/menu.png')}}" class="menu-icon" onclick="menutoggle()">
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <h1> You want?<br> We have it.</br></h1>
+          <p>Dogs do speak, but only to those who know how to listen </p>
+          <a href="product.html" class="btn"> Explore Now &#8594</a>
+        </div>
+        <div class="col-2">
+          <img src="{{url_for('static', filename= 'pictures/labrador 2.jpeg')}}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- feature category  -->
+  <!-- <div class="catogories">
+    <div class="small-container">
+      <div class="row">
+        <div class=" col-3">
+          <img src="pictures/siberian husky .webp">
+        </div>
+        <div class=" col-3">
+          <img src="pictures/pomeranian.jpeg">
+        </div>
+        <div class=" col-3">
+          <img src="pictures/toy poodle.jpg">
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </div> -->
+  <!-- Available breeds -->
+
+  <div class="small-container">
+    <div class="row row-2">
+      <h2><strong>Available Breeds</strong></h2>
+      <select>
+        <option>Default sorting </option>
+        <option>Short by price</option>
+        <option>Short by popularity</option>
+        <option>Short by rating</option>
+        <option>Short by sale</option>
+
+      </select>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <a href="american"><img src="{{url_for('static', filename= 'pictures/american bulldog.jpg')}}"></a>
+        <h4> <a href="american">American Pitbull</a></h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 1,00,000</p>
+      </div>
+      <div class="col-4">
+        <a href="pug"><img src="{{url_for('static', filename= 'pictures/pug.jpeg')}}"></a>
+        <h4>Pug</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-half-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 30,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/labrador.jpeg')}}">
+        <h4>labrador</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 20,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/pomeranian.jpeg')}}">
+        <h4>Pomeranian</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-half-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 50,000</p>
+      </div>
+
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/french.jpeg')}}">
+        <h4>French Bulldog</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-half-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 40,000</p>
+      </div>
+      
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/cocker spaniel.jpg')}}">
+        <h4>Cocker Spaniel</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 15,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/rottweiler.jpg')}}">
+        <h4>Rottweiler</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 40,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/samoyed.avif')}}">
+        <h4>Samoyed</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 55,000</p>
+      </div>
+    </div>
+    <h2 class="title">Accessories</h2>
+    <div class="row">
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/dog_food.jpg')}}">
+        <h4>Dog Food</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 1,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/food bowl.jpg')}}">
+        <h4>Food bowl</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-half-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 1,500</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/dog belt.jpg')}}">
+        <h4>Dog belt</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 500</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/cage.png')}}">
+        <h4>Cage</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-half-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 5,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/bed for dog.jpg')}}">
+        <h4>Bed</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-half-o"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 4,000</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/grooming gloves.jpg')}}">
+        <h4>Grooming Gloves</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 1,500</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/comb.jpg')}}">
+        <h4>Comb for dog</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 400</p>
+      </div>
+      <div class="col-4">
+        <img src="{{url_for('static', filename= 'pictures/calcium bone.jpg')}}">
+        <h4>Calcium bone</h4>
+        <div class="rating">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star-o"></span>
+        </div>
+        <p>Rupees 1,500</p>
+      </div>
+    </div>
+    <div class="page-btn">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>&#8594;</span>
+    </div>
+  </div>
+  <!-- offer -->
+  <div class="offer">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-2">
+          <a href="tibetian"><img src="{{url_for('static', filename= 'pictures/Tibetan Mastiff1.jpg')}}"
+              class="offer-img"></a>
+        </div>
+        <div class="col-2">
+          <p>Exclusively Available with Us</p>
+          <h1> Tibetan Mastiff</h1>
+          <small>The Tibetan Mastiff is a large breed of dog that originated in Tibet. They are known for their
+            impressive size, thick coat, and fierce loyalty to their family. They were originally bred to protect
+            livestock and property from predators such as wolves and bears in the Himalayan region.</small>
+
+          <br><a href="tibetian" class="btn"> Buy Now &#8594; </a></br>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- testimonial -->
+  <div class="testimonial">
+    <div class="small-container">
+      <div class="row">
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>I recently had the pleasure of shopping at an online pet shop and I couldn't be happier with my experience.
+            From start to finish, everything was easy, convenient, and efficient.</p>
+          <div class="rating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star-o"></span>
+          </div>
+          <img src="{{url_for('static', filename= 'pictures/bill gates.jpeg')}}">
+          <h3>Bill Gates</h3>
+        </div>
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>I had a great shopping experience at an online pet store recently, and I am extremely satisfied with the
+            whole process. Everything from the beginning to the end was straightforward, hassle-free.</p>
+          <div class="rating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star-o"></span>
+          </div>
+          <img src="{{url_for('static', filename= 'pictures/elon musk.jpg')}}">
+          <h3>Elon Musk</h3>
+        </div>
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>I recently had the pleasure of shopping at an online pet shop and I couldn't be happier with my experience.
+            From start to finish, everything was easy, convenient, and efficient.</p>
+          <div class="rating">
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </div>
+          <img src="{{url_for('static', filename= 'pictures/Sam Altman.jpg')}}">
+          <h3>Sam Altman</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download our App</h3>
+          <p>Download App for Andriod and IOS</p>
+        </div>
+        <div class="footer-col-2">
+          <img src="{{url_for('static', filename= 'pictures/king.png')}}">
+          <p>Our purpose is to provide Online service for your pet. So, that you shouldn't worry any more.</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful links</h3>
+          <ul>
+            <li>Return policy</li>
+            <li>Blog post</li>
+          </ul>
+        </div>
+        <div class="footer-col-3">
+          <h3>Social media </h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle() {
+      if (MenuItems.style.maxHeight == "0px") {
+        MenuItems.style.maxHeight = "200px";
+      }
+      else {
+        MenuItems.style.maxHeight = "0px";
+      }
+    }
+  </script>
+  <!-- js for toggle form  -->
+  <script>
+    var LoginForm = document.getElementById("LoginForm");
+    var RegForm = document.getElementById("RegForm");
+    var Indictor = document.getElementById("Indicator");
+
+    function register() {
+      RegForm.style.transform = "translateX(0px)";
+      LoginForm.style.transform = "translateX(0px)";
+      Indictor.style.transform = "translateX(100px)";
+    }
+
+    function login() {
+      RegForm.style.transform = "translateX(300px)";
+      LoginForm.style.transform = "translateX(300px)";
+      Indictor.style.transform = "translateX(0px)";
+    }
+
+  </script>
+</body>
+
+</html>
+
+
+
+<!-- # is used to give unique id -->

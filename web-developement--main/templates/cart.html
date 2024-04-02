@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cart - King's Store</title>
+  <link rel="stylesheet" href = "{{url_for('static', filename='style.css')}}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="/"> <img src="{{url_for('static', filename= 'pictures/king.png')}}" width="80px"></a>
+        </div>
+        <!-- Nav represents a section of page which is linked with another pages or parts.  -->
+        <nav>
+          <!-- ul means unordered list  -->
+          <ul id="MenuItems">
+            <!-- li is used to represent an items in a list -->
+            <li> <a href="/">Home</a></li>
+            <li> <a href="product">Products</a></li>
+            <li> <a href="">Contact</a></li>
+            <li> <a href="account">Account</a></li>
+          </ul>
+        </nav>
+        <a href="cart"><img src="{{url_for('static', filename= 'pictures/cart.jpg')}}" width="40px" height="50px"></a>
+        <img src="{{url_for('static', filename= 'pictures/menu.png')}}" class="menu-icon" onclick="menutoggle()">
+      </div>
+    </div>
+  </div>
+  <!-- cart items details -->
+  <div class="small-container cart-page">
+    <table>
+      <tr>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img src="{{url_for('static', filename= 'pictures/american pitbull.jpeg')}}">
+            <div>
+              <p>American Pitbull</p>
+              <small>Price: 1,00,000</small>
+              <br>
+               <a href="">Remove</a>
+            </div>
+          </div>
+        </td>
+        <td><input type = "number" value = "1"></td>
+        <td>Rs 1,00,000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img src="{{url_for('static', filename= 'pictures/pug.jpeg')}}">
+            <div>
+              <p>Pug</p>
+              <small>Price: 30,000</small>
+              <br>
+               <a href="">Remove</a>
+            </div>
+          </div>
+        </td>
+        <td><input type = "number" value = "1"></td>
+        <td>Rs 30,000</td>
+      </tr>
+      <tr>
+        <td>
+          <div class="cart-info">
+            <img src="{{url_for('static', filename= 'pictures/Tibetan Mastiff1.jpg')}}">
+            <div>
+              <p>Tibetan Mastiff</p>
+              <small>Price: 1,00,000</small>
+              <br>
+               <a href="">Remove</a>
+            </div>
+          </div>
+        </td>
+        <td><input type = "number" value = "1"></td>
+        <td>Rs 1,00,000</td>
+      </tr>
+    </table>
+  <div class="total-price">
+    <table>
+      <tr>
+        <td>Subtotal</td>
+        <td>2,30,000</td>
+      </tr>
+      <tr>
+        <td>Tax</td>
+        <td>20,000</td>
+      </tr>
+      <tr>
+        <td>Subtotal</td>
+        <td>2,50,000</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col-1">
+          <h3>Download our App</h3>
+          <p>Download App for Andriod and IOS</p>
+        </div>
+        <div class="footer-col-2">
+          <img src="{{url_for('static', filename= 'pictures/king.png')}}">
+          <p>Our purpose is to provide Online service for your pet. So, that you shouldn't worry any more.</p>
+        </div>
+        <div class="footer-col-3">
+          <h3>Useful links</h3>
+          <ul>
+            <li>Return policy</li>
+            <li>Blog post</li>
+          </ul>
+        </div>
+        <div class="footer-col-3">
+          <h3>Social media </h3>
+          <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+    function menutoggle() 
+    {
+      if (MenuItems.style.maxHeight == "0px") 
+      {
+        MenuItems.style.maxHeight = "200px";
+      }
+      else 
+      {
+        MenuItems.style.maxHeight = "0px";
+      }
+    }
+  </script>
+</body>
+
+</html>
+
+
+
+
+
+<!-- # is used to give unique id -->
